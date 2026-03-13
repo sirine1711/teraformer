@@ -1,0 +1,29 @@
+# Exemple de fichier terraform.tfvars
+# Copiez ce fichier vers terraform.tfvars et modifiez les valeurs selon votre environnement
+
+# Localisation Azure (exemples: "West Europe", "East US", "France Central")
+location = "West Europe"
+
+# Nom du groupe de ressources
+resource_group_name = "rg-terraform-projet"
+
+# Nom de la machine virtuelle
+vm_name = "vm-projet"
+
+# Nom d'utilisateur admin pour la VM
+admin_username = "azureuser"
+
+# Mot de passe sécurisé pour l'utilisateur admin (minimum 12 caractères, avec majuscules, minuscules, chiffres et caractères spéciaux)
+admin_password = "VotreMotDePasseSecurise123!"
+
+# Taille de la VM (exemples: "Standard_B1s", "Standard_B2s", "Standard_B2ms")
+vm_size = "Standard_B2als_v2"
+
+# Nom unique du compte de stockage (doit être globalement unique, 3-24 caractères, lettres minuscules et chiffres uniquement)
+storage_account_name = "votrenom12345storage"
+
+# Nom du conteneur de stockage
+container_name = "fichiers"
+
+# Chemin vers votre clé publique SSH (générez-la avec: ssh-keygen -t rsa -b 4096)
+ssh_public_key_path = "~/.ssh/id_rsa.pub"

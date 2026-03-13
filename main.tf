@@ -57,7 +57,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   connection {
     type     = "ssh"
     user     = "azureuser"
-    password = "Password1234!"
+    password = var.admin_password
     host     = azurerm_public_ip.publicip.ip_address
   }
   name                = "vm-projet"
@@ -72,7 +72,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
 
   admin_ssh_key {
     username   = "azureuser"
-    public_key = file("C:/Users/sirin/.ssh/id_rsa.pub")
+    public_key = file(var.ssh_public_key_path)
   }
 
   os_disk {
@@ -89,7 +89,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
 }
 
 resource "azurerm_storage_account" "storage" {
-  name                     = "storagesirin12345"
+  name                     = var.storage_account_name
   resource_group_name      = azurerm_resource_group.rg.name
   location                 = azurerm_resource_group.rg.location
   account_tier             = "Standard"

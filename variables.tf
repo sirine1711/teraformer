@@ -19,9 +19,26 @@ variable "vm_size" {
 }
 
 variable "storage_account_name" {
-  default = "storagesirin12345"
+  description = "Nom unique du compte de stockage Azure (doit être globalement unique)"
+  type        = string
+  default     = "YOUR_UNIQUE_STORAGE_NAME"
 }
 
 variable "container_name" {
-  default = "fichiers"
+  description = "Nom du conteneur de stockage"
+  type        = string
+  default     = "fichiers"
+}
+
+variable "admin_password" {
+  description = "Mot de passe pour l'utilisateur admin de la VM"
+  type        = string
+  sensitive   = true
+  default     = "YOUR_SECURE_PASSWORD"
+}
+
+variable "ssh_public_key_path" {
+  description = "Chemin vers votre clé publique SSH"
+  type        = string
+  default     = "~/.ssh/id_rsa.pub"
 }
