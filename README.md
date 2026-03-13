@@ -567,6 +567,4 @@ app.listen(PORT, "0.0.0.0", ...)
 
 ---
 
-## Auteur
 
-Projet réalisé par [VOTRE_NOM].
